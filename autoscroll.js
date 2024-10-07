@@ -9,6 +9,12 @@ function scroll(e) {
     page--
   }
 
+  if (page >= document.getElementsByTagName("p").length) {
+    page = 0
+  } else if (page < 0) {
+    page = document.getElementsByTagName("p").length - 1
+  }
+
   console.log(page)
   document.getElementsByTagName("p")[page].scrollIntoView({behavior: "instant"})
 }
